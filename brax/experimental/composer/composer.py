@@ -499,13 +499,13 @@ def create(env_name: str = None,
     return env  # type: ignore
 
   # add wrappers
-  env = braxlines_wrappers.ExtraStepArgsWrapper(env)
   if episode_length is not None:
     env = wrappers.EpisodeWrapper(env, episode_length, action_repeat)
   if batch_size:
     env = wrappers.VectorWrapper(env, batch_size)
   if auto_reset:
     env = wrappers.AutoResetWrapper(env)
+  env = braxlines_wrappers.ExtraStepArgsWrapper(env)
   return env  # type: ignore
 
 
