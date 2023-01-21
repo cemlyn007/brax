@@ -1,1 +1,2 @@
 include brax/v2/envs/assets/*.xml
+include brax/v2/visualizer/*
